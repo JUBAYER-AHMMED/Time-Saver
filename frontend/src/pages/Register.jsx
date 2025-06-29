@@ -25,12 +25,15 @@ const Register = () => {
 
     setLoading(true);
     try {
+      
       const res = await instance.post("/api/auth/register", {
         name,
         email,
         password,
         role,
       });
+
+      console.log(res);
 
       if (role === "general-user" || "admin") {
         navigate("/login");
