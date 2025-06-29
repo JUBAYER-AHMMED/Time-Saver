@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: '*',
   credentials: true
 }));
 
@@ -46,6 +46,7 @@ app.use(passport.session());
 
 // Routes
 app.get('/', (req, res) => {
+  
   res.send('Backend is working!');
 });
 // GET all doctors
