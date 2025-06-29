@@ -5,7 +5,7 @@ const router = express.Router();
 
 // GET all doctors
 router.get('/', async (req, res) => {
-  // console.log("i am called!");
+  console.log("i am called!");
   try {
     const doctors = await Doctor.find().select('_id name');
     res.json(doctors);
