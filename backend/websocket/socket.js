@@ -5,8 +5,8 @@ let io;
 export function initSocket(server) {
   io = new Server(server, {
     cors: {
-      origin: 'http://localhost:5174',
-      credentials: true
+      origin: '*',
+      credentials: false
     }
   });
 
