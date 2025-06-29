@@ -1,7 +1,7 @@
 // src/pages/AddDoctor.jsx
 import React, { useState } from "react";
 import axios from "axios";
-
+import instance from "../services/api";
 const AddDoctor = () => {
   const [name, setName] = useState("");
   const [specialization, setSpecialization] = useState("");
@@ -12,8 +12,8 @@ const AddDoctor = () => {
     try {
       const token = localStorage.getItem("token");
       console.log(token);
-      const res = await axios.post(
-        "http://localhost:5000/api/admin/doctors",
+      const res = await instance.post(
+        "/api/admin/doctors",
         {
           name,
           specialization,
@@ -24,6 +24,7 @@ const AddDoctor = () => {
           },
         }
       );
+      // console.log(res);
       setMessage(`Doctor "${res.data.name}" added successfully!`);
       setName("");
       setSpecialization("");

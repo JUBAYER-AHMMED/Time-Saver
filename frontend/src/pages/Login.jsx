@@ -22,9 +22,9 @@ const Login = () => {
       const res = await instance.post(
         "/api/auth/login",
         { email, password },
-        { withCredentials: true }
+        { withCredentials: false }
       );
-      console.log(res);
+      // console.log(res);
 
       const { user, token } = res.data;
       console.log(user);
