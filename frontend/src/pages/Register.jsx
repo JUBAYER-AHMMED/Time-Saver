@@ -55,7 +55,7 @@ const Register = () => {
         className="card shadow-sm p-4"
         style={{ maxWidth: "400px", width: "100%" }}
       >
-        <h3 className="mb-4 text-center">📝 Register</h3>
+        <h3 className="mb-4 text-center">Register</h3>
         {error && <div className="alert alert-danger">{error}</div>}
         <form onSubmit={handleSubmit} noValidate>
           <div className="mb-3">
@@ -117,7 +117,7 @@ const Register = () => {
               minLength={6}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3 hide">
             <label className="form-label">Role</label>
             <div>
               <div className="form-check form-check-inline">
